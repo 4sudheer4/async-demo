@@ -1,0 +1,46 @@
+1. create a folder mkdir and run 'npm init'
+
+//this will create package.json.
+
+2. create a index.js file and write the functions and export it using module.exports
+
+3. 'npm adduser' or 'npm login' to publish your package. 
+
+4. 'npm publish' will publish the package.
+
+5. now in another package if you want to install the above package, run 'npm i <name of the package>'
+
+$ npm i lion-lib-sudheer-first
+
+6. if there are any changes in the package, you need to create a new version. 
+    This can be either new Major or Minor or Patch versions.
+
+7. Once you update the package, you need to run:
+
+$ npm version minor
+$ npm publish
+
+
+
+/******************************/
+
+package commands:
+
+$ npm list //this will list all the dependencies installed in the current package
+$ npm list --depth=0
+
+$ npm view <package_name> dependencies  //this will view all the dependencies of a package
+
+$ npm i <package_name>@<version>
+
+$ npm outdated //this will list all the outdated packages
+
+$ npm update //this will only update till the highest in that Major release.
+
+//to update new packages to latest version
+    1. $ npm i -g npm-check-updates    
+    2. $ npm-check-updates
+    3. ncu -u   //this will update till latest version.
+    4. now run $npm install   //this will install all the above updated packages
+
+
