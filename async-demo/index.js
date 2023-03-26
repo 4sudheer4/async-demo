@@ -1,3 +1,4 @@
+/*
 console.log('Before');
 //this is to perform async execution. 
 //async execution means one thread will take care of all the threads and 
@@ -17,3 +18,16 @@ setTimeout(() => {
 
 console.log('After');
 
+*/
+console.log('Before');
+const user = getUser(1);
+console.log(user);
+
+function getUser(id){
+        setTimeout(() => {
+            console.log('Reading a user from database....');
+            return {id: id, githubuser: "4sudheer4"};    
+        }, 2000);
+}
+
+console.log('After');
