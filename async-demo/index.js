@@ -27,6 +27,8 @@ getUser(1,function(user){
         console.log('repos:',repos);
     })
 });
+//but the above function calls make nested calls which is called callback Hell. this can be resolved.
+
 
 //callback is a function that will be called when the result of async object is ready. 
 function getUser(id, callback){
