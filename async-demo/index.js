@@ -20,14 +20,29 @@ console.log('After');
 
 */
 console.log('Before');
-const user = getUser(1);
-console.log(user);
+getUser(1,function(user){
+    console.log('user:',user);
 
-function getUser(id){
+    getRepo(user.githubuser,(repos) => {
+        console.log('repos:',repos);
+    })
+});
+
+//callback is a function that will be called when the result of async object is ready. 
+function getUser(id, callback){
         setTimeout(() => {
             console.log('Reading a user from database....');
-            return {id: id, githubuser: "4sudheer4"};    
+            callback({id: id, githubuser: "4sudheer4"});
+            // return;    
         }, 2000);
+}
+
+function getRepo(username, callback){
+    setTimeout(() => {
+        console.log('Reading a repos from the user');
+        callback(["repo1", "repo2", "repo3"]);
+        // return;    
+    }, 2000);
 }
 
 console.log('After');
