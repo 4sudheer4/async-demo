@@ -2,11 +2,15 @@
 
 console.log('Before');
 
+// getUser will return a promise.
+
 const p = getUser(1);
 
 p.then(function getUserDetails(result){
     console.log('User details: ', result);
 })
+
+// this function will return promise, and we can access the methods of the promise like catch() and then() based on reject() and resolve()
 
 function getUser(id){
         
