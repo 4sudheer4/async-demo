@@ -19,6 +19,9 @@ setTimeout(() => {
 console.log('After');
 
 */
+//here callback below in the 'getUser' definition will be called, 
+//that is nothing but function(user) below will be called when "callback({id: id, githubuser: "4sudheer4"});" is called.
+
 console.log('Before');
 getUser(1,function(user){
     console.log('user:',user);
