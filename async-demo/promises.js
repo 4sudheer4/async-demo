@@ -15,6 +15,10 @@ const p = new Promise(function(resolve, reject){
 
 });
 
-p.then(function(result) {
+p
+    .then(function(result) {
     console.log('Result', result)}
-);
+    )
+    .catch(function(err){
+        console.log('Error', err.message)} 
+    );
