@@ -23,6 +23,7 @@ console.log('After');
 //that is nothing but function(user) below will be called when "callback({id: id, githubuser: "4sudheer4"});" is called.
 
 console.log('Before');
+
 getUser(1,function(user){
     console.log('user:',user);
 
@@ -31,6 +32,7 @@ getUser(1,function(user){
     })
 });
 //but the above function calls make nested calls which is called callback Hell. this can be resolved.
+//hence we need to define a function and replace it with the name.
 
 
 //callback is a function that will be called when the result of async object is ready. 
