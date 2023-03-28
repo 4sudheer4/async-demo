@@ -4,13 +4,14 @@ console.log('Before');
 
 // getUser will return a promise.
 
-//const p_ud = getUser(1);
+const p_ud = getUser(1);
 
 
-getUser(1)
-    .then(result => getRepo(1))
+p_ud
+    .then((result) => getRepo(1))
     .then(repos => getCommits(repos[0]))
     .then(commits => {console.log('commits: ',commits)
+    .catch(err => console.log(err));
     });                
 
 // getRepo(1)

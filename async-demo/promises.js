@@ -17,7 +17,8 @@ const p = new Promise(function(resolve, reject){
 
 });
 
-/*****IMP: HERE THE ABOVE REJECT('MESSAGE') WILL BE PASSED TO CATCH AND PARAMETER 'ERR' HAS 'MESSAGE' AS VALUE */
+/*****IMP: HERE THE ABOVE REJECT('MESSAGE') WILL BE PASSED TO CATCH AND PARAMETER will be passed which 
+ * HAS 'MESSAGE' AS VALUE that will be stored in 'ERR' in "Catch(function(err)" */
 p
     //this will execute 'then' or 'catch' based on whether resolve() or reject() is executed.
     .then(function(result) {
