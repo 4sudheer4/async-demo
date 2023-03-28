@@ -17,6 +17,7 @@ const p = new Promise(function(resolve, reject){
 
 });
 
+/*****IMP: HERE THE ABOVE REJECT('MESSAGE') WILL BE PASSED TO CATCH AND PARAMETER 'ERR' HAS 'MESSAGE' AS VALUE */
 p
     //this will execute 'then' or 'catch' based on whether resolve() or reject() is executed.
     .then(function(result) {
