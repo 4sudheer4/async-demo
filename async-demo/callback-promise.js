@@ -4,16 +4,17 @@ console.log('Before');
 
 // getUser will return a promise.
 
-const p_ud = getUser(1);
+//const p_ud = getUser(1);
 
-p_ud
-    .then((result) => {console.log('User details: ', result);
-                            getRepo(result.githubuser);})
-    .then((repos) => {console.log('repos: ',repos);
-                        getCommits(repos[0]);})
-    .then((commits) => {console.log('commits: ',commits);
+
+getUser(1)
+    .then(result => getRepo(1))
+    .then(repos => getCommits(repos[0]))
+    .then(commits => {console.log('commits: ',commits)
     });                
 
+// getRepo(1)
+//     .then(repos => {console.log('repo details: ', repos)});
 
 
 // this function will return promise, and we can access the methods of the promise like catch() and then() based on reject() and resolve()
@@ -46,7 +47,7 @@ function getCommits(repo){
             resolve(["comm1", "comm2", "comm3"]);
             // return;    
         }, 2000);
-    })
+    });
 }
 
 console.log('After');
