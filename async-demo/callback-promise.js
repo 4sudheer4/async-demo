@@ -16,10 +16,16 @@ console.log('Before');
 
 //Async and await approach
 async function displayCommits(){
-    const p_ud = await getUser(1); //returns a promise
-    const p_repo = await getRepo(p_ud.id);  ////returns a promise
-    const p_commits = await getCommits(p_repo[0]); //returns a promise
-    console.log(p_commits);
+    try{
+        const p_ud = await getUser(1); //returns a promise
+        const p_repo = await getRepo(p_ud.id);  ////returns a promise
+        const p_commits = await getCommits(p_repo[0]); //returns a promise
+        console.log(p_commits);
+    }
+    catch(err){
+        console.log('error in the process: ',err.message);
+    }
+    
 }
 displayCommits();
 
@@ -40,7 +46,8 @@ function getRepo(username){
     return new Promise(function(resolve, reject){
         setTimeout(() => {
             console.log('Reading a repos from the user');
-            resolve(["repo1", "repo2", "repo3"]);
+            // resolve(["repo1", "repo2", "repo3"]);
+            reject(new Error('couldn\'t get the repo details...' ))
             // return;    
         }, 2000);
     })
