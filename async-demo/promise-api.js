@@ -27,3 +27,5 @@ const p3 = new Promise((resolve, reject) => {
 Promise.race([p1,p2,p3])
     .then((result) => {console.log(result)})
     .catch((err) => {console.log(err)}); //fails when atleast one of the promises fail.
+
+

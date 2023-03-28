@@ -4,19 +4,24 @@ console.log('Before');
 
 // getUser will return a promise.
 
-const p_ud = getUser(1);
+// const p_ud = getUser(1);
 
 
-p_ud
-    .then((result) => getRepo(1))
-    .then(repos => getCommits(repos[0]))
-    .then(commits => {console.log('commits: ',commits)
-    .catch(err => console.log(err));
-    });                
+// p_ud
+//     .then((result) => getRepo(1))
+//     .then(repos => getCommits(repos[0]))
+//     .then(commits => {console.log('commits: ',commits)
+//     .catch(err => console.log(err));
+//     });                
 
-// getRepo(1)
-//     .then(repos => {console.log('repo details: ', repos)});
-
+//Async and await approach
+async function displayCommits(){
+    const p_ud = await getUser(1); //returns a promise
+    const p_repo = await getRepo(p_ud.id);  ////returns a promise
+    const p_commits = await getCommits(p_repo[0]); //returns a promise
+    console.log(p_commits);
+}
+displayCommits();
 
 // this function will return promise, and we can access the methods of the promise like catch() and then() based on reject() and resolve()
 
